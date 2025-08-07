@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-6</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>REVERSE EACH WORD IN A STRING WHILE KEEPING THE WORD ORDER</h1>
+    <p>Enter a string to reverse each word while keeping the order of words.</p>
+    <input type="text" id="input-text" placeholder="Enter a string">
+    <button onClick="reverseWords()">Reverse Words</button>
+    <p id="result"></p>
+    <script>
+        document.getElementById("input-text").focus();
+        reverseWords = () => {
+            let str = document.getElementById("input-text").value.trim();
+            let words=str.split(' ');
+            let res=words.map(word =>word.split("").reverse().join("")).join(" ");
+            document.getElementById("result").innerHTML = `Reversed words: ${res}`;
+            document.getElementById("input-text").value = "";
+            document.getElementById("input-text").focus();
+        }
+    </script>
+</body>
+</html>

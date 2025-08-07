@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-10</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .done {
+            cursor: pointer;
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        #task-list div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            max-width: 350px;
+            margin: 10px auto;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #task-list span {
+            flex: 1;
+            text-align: left;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>SIMPLE TO-DO LIST</h1>
+    <p>Created a simple to-do list where you can add tasks, strike off tasks that are finished, delete tasks that are not required anymore.</p>
+
+    <input type="text" id="task-input" placeholder="Enter a Task" onkeydown="if(event.key==='Enter') addTask()">
+    <button id="add-task-btn" onclick="addTask()" aria-label="Add new task">Add Task</button>
+
+    <div id="task-list"></div>
+
+    <script>
+        function addTask() {
+            const taskText = document.getElementById("task-input").value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a valid task!");
+                return;
+            }
+
+            const taskDiv = document.createElement("div");
+
+            const taskItem = document.createElement("span");
+            taskItem.textContent = taskText;
+            taskItem.style.marginRight = "10px";
+
+            taskItem.onclick = function () {
+                taskItem.classList.toggle("done");
+            }
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.style.marginLeft = "10px";
+
+            deleteBtn.onclick = function () {
+                if (confirm("Are you sure you want to delete this task?")) {
+                    taskDiv.remove();
+                }
+            }
+
+            taskDiv.appendChild(taskItem);
+            taskDiv.appendChild(deleteBtn);
+            document.getElementById("task-list").appendChild(taskDiv);
+
+            // Clear and focus the input
+            document.getElementById("task-input").value = "";
+            document.getElementById("task-input").focus();
+        }
+    </script>
+</body>
+</html>

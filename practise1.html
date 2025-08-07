@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palindrome Checker</title>
+  <style>
+        .center{
+            margin-top: 10%;
+        }
+  </style>
+</head>
+<body>
+    <div class="center">
+  <center>
+    <h1>Enter a number to check whether it is a palindrome or not.</h1>
+    <label>Enter a Number</label>
+    <input type="text" placeholder="enter a number" id="val"/><br><br>
+    <button onclick="fun()">Submit</button>
+    <div id="res"></div>
+    </div>
+  </center>
+
+  <script>
+    const fun = () => {
+      let n = parseInt(document.getElementById('val').value);
+      if (isNaN(n)) {
+        document.getElementById('res').innerHTML = "Please enter a valid number.";
+        return;
+      }
+
+      let temp = n;
+      let reversed = 0;
+
+      while (n > 0) {
+        let r = n % 10;
+        reversed = reversed * 10 + r;
+        n = Math.floor(n / 10);
+      }
+
+      const result = (temp === reversed)
+        ? "The given number is a palindrome."
+        : "The given number is not a palindrome.";
+
+      document.getElementById('res').innerHTML = result;
+    };
+  </script>
+</body>
+</html>

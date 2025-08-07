@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-5</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNT VOWELS IN A STRING</h1>
+    <p>Enter a string to count the number of vowels in it.</p>
+    <input type="text" id="input-text" placeholder="Enter a string">    
+    <button onClick="countVowels()">Count Vowels</button>
+    <p id="result"></p>
+    <script>
+        countVowels=()=>{
+            let str=document.getElementById("input-text").value;
+            let vowels="aeiou";
+            str=str.toLowerCase();
+            count=0;
+            for(let i=0; i<str.length; i++){
+                if(vowels.includes(str[i])){
+                    count++;
+                }
+            }
+            if(count>0){
+                document.getElementById("result").innerHTML="The number of vowels in the string is:"+count;
+            } else {
+                document.getElementById("result").innerHTML="No vowels found in the string.";
+            }
+            document.getElementById("input-text").value="";
+            document.getElementById("input-text").focus();
+        }
+    </script>
+</body>
+</html>

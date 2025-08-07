@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+    <p>Enter a number to generate its Multiplication table.</p>
+    <input type="text" id="num" placeholder="Enter a number">
+    <button onclick="mul()" >Multiply</button>
+    <p id="result"></p>
+    <script>
+        let mul = ()=>{
+            let n=document.getElementById("num").value;
+            document.getElementById("result").innerHTML="";
+            n=parseInt(n);
+            if(isNaN(n)){
+                document.getElementById("result").innerHTML="Please enter a valid number!";
+            }else{
+                for(let i=1; i<=10; i++){
+                    document.getElementById("result").innerHTML+=`${n} x ${i} = ${n*i} <br>`;
+                }
+            }
+            document.getElementById("num").value = "";
+            document.getElementById("num").focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-2</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>SIMPLE AGE CHECKER</h1>
+    <p>Enter a number to check what category the age falls into.</p>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button id="check">Check</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("check").addEventListener("click",check)
+        function check(){
+            let age=document.getElementById("num").value;
+            age=parseInt(age);
+            if(isNaN(age)){
+                document.getElementById("result").innerHTML="Please enter a valid number!";
+            }else{
+                if(age<13){
+                    document.getElementById("result").innerHTML="You're a child";
+                }else if(age>=13 && age<20){
+                    document.getElementById("result").innerHTML="You're a teenager";
+                }else if(age>=20 && age<60){
+                    document.getElementById("result").innerHTML="You're an adult";  
+                }else{
+                    document.getElementById("result").innerHTML="You're a senior citizen";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

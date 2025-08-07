@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-9</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNTDOWN TIMER</h1>
+    <p>This a Countdown timer. Enter the number to start the countdown.</p>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onClick="check()" id="btn">Check</button>
+    <h1 id="result"></h1>
+    <audio id="alarm" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+    <button id="pause" hidden>Pause</button>
+    <script>
+        check = ()=>{
+            let n=parseInt(document.getElementById("num").value);
+            if(isNaN(n) || n<0){
+                document.getElementById("result").innerHTML="Please enter a valid number!";
+                return;
+            }
+            let timer=setInterval(()=>{
+                if(n==0){
+                    document.getElementById("result").innerHTML="Time's Up!!";
+                    clearInterval(timer);
+                    document.getElementById("num").hidden=true;
+                    document.getElementById("btn").hidden=true;
+                    document.getElementById("alarm").play();
+                    document.getElementById('pause').hidden=false;
+                    document.getElementById('pause').addEventListener("click",()=>{
+                        document.getElementById("alarm").pause();
+                        document.getElementById('pause').hidden=true;
+                }, { once: true })
+                }
+                    else{
+                    document.getElementById("result").innerHTML=n;
+                    n--;
+                }
+            },1000);
+        }
+    </script>
+</body>
+</html>

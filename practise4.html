@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-4</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse words in a string</h1>
+    <input type="text" id="sentence" placeholder="Enter a string">
+    <button id="btn" onClick="reverse()" >Reverse</button>
+    <p id="result"></p>
+    <script>
+        reverse=()=>{
+            let s=document.getElementById("sentence").value;
+            let rev=s.split(" ").reverse().join(" ");
+            document.getElementById("result").innerHTML="The reversed string is: " + rev;
+            document.getElementById('senctence')='';
+        }
+    </script>
+</body>
+</html>
