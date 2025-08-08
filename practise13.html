@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-16</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>CREATE A LIST FROM USER INPUT</h1>
+    <p>Enter items to create a list. Click 'Add' to add an item.</p>
+    <input type="text" id="item-input" placeholder="Enter an item">
+    <button id="btn">Add</button>
+    <div id="item-list"></div>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            let item=document.getElementById("item-input").value;
+            if(item ===""){
+                alert("Please enter a valid item!");
+                return;
+            }
+            let li=document.createElement("li");
+            li.textContent=item;
+            document.getElementById("item-list").appendChild(li);
+            document.getElementById("item-input").value="";
+            document.getElementById("item-input").focus();
+        })
+    </script>
+</body>
+</html>

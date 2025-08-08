@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TASK-12</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+    button{
+        font-size: small;
+        font-weight: 700;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width:100px;
+        height:50px;
+        border:1px solid black;
+        border-radius:10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TOGGLE DARK MODE BUTTON</h1>
+  <p>Click the button to toggle dark mode.</p>
+  <button id="toggle-btn">Toggle to Dark Mode</button>
+
+  <script>
+    document.getElementById("toggle-btn").addEventListener("click", function () {
+        if(document.body.classList.contains("dark-mode")){
+            
+            document.body.classList.remove("dark-mode");
+            document.getElementById("toggle-btn").innerHTML="Toggle to Dark Mode";
+            document.getElementById("toggle-btn").style.backgroundColor="black";
+            document.getElementById("toggle-btn").style.color="white";
+        }
+        else{
+            document.body.classList.add("dark-mode");
+            document.getElementById("toggle-btn").innerHTML="Toggle to Light Mode"
+            document.getElementById("toggle-btn").style.backgroundColor="white";
+             document.getElementById("toggle-btn").style.color="black";
+        }
+    });
+  </script>
+</body>
+</html>

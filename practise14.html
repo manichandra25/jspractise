@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK-18</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>ROLL THE DICE</h1>
+    <p>Click on the image below to roll the dice.</p>
+    <!-- <button id="btn">Roll It</button><br><br> -->
+    <img id="dice-img" src="images/dice1.png" height="400px" width="400px" onClick="rollDice()"></img>
+
+    <script>
+        rollDice = ()=>{
+            let idx=Math.floor(Math.random()*6)+1;
+            document.getElementById("dice-img").src=`images/dice${idx}.png`;
+        }
+    </script>
+</body>
+</html>
