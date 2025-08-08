@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-11</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>GUESS THE NUMBER GAME</h1>
+    <p>Try to guess the number I'm thinking of between 1 and 100. You only get 5 attempts to guess the number.</p>
+    <input type="number" id="num" placeholder="Guess the number" />
+    <button onClick="result()" id="btn">Guess!</button>
+    <p id="res"></p>
+    <script>
+        
+        const randomNumber=Math.floor(Math.random()*100)+1;
+        let count=0;
+        result = ()=>{
+            count++;
+            if(count>5){
+                document.getElementById("res").innerHTML="Game Over! You've used all attempts.";
+                document.getElementById("res").innerHTML += `<br> The number was: ${randomNumber}`;
+                document.getElementById("num").hidden=true;
+                document.getElementById("btn").hidden=true;
+                return;
+            }
+            let n=document.getElementById("num").value;
+            n=parseInt(n);
+            document.getElementById("res").innerHTML="";
+            if(n<0 || isNaN(n)){
+                document.getElementById("res").innerHTML="Please enter a valid number!";
+                return;
+            }
+            if(n==randomNumber){
+                document.getElementById("res").innerHTML="Congratulations! You guessed the number!";
+            } else if(n<randomNumber){
+                document.getElementById("res").innerHTML="Too low! Try again.";
+            } else {
+                document.getElementById("res").innerHTML="Too high! Try again.";
+            }
+            document.getElementById("num").value ="";
+            document.getElementById("num").focus();
+        }
+    </script>
+</body>
+</html>
