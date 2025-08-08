@@ -1,63 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-            .buttons{
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                margin:auto;
-            }
-            button{
-                margin:10px;
-                padding: 5px;
-                border: 1px black;
-                border-radius: 3px;
-                background-color: blue;
-                width:80px;
-                cursor: pointer;
-                color: white;
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Practice Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    </style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      color: #333;
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h4 {
+      margin: 10px 0;
+      font-size: 1.4rem;
+      color: #222;
+    }
+
+    p {
+      margin: 15px auto 40px;
+      max-width: 600px;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.2s;
+      width: 120px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    button:disabled {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
-    <center>
-    <h4>Hello,I'm Mani Chandra</h4>
-    <h4>Welcome to my JavaScript practice Hub</h4>
-    <p>This page contains all the exercises I've completed
-        while learning JavaScript.
+  <h4>Hello, I'm Mani Chandra</h4>
+  <h4>Welcome to my JavaScript Practice Hub</h4>
+  <p>
+    This page contains all the exercises I've completed while learning JavaScript. <br>
     Click on any button below to explore my work.
-    </p>
-    </center>
-    <div class="buttons">
-        <button onclick="window.open('practise1.html')">practice 1</button>
-        <button onclick="window.open('practise2.html')">practice 2</button>
-        <button onclick="window.open('practise3.html')">practice 3</button> 
-        <button onclick="window.location.href='practise4.html'">practice 4</button>
-    </div><br>
-    <br>
-    <div class="buttons">
-        <button onclick="window.location.href='practise5.html'">practice 5</button>
-        <button onclick="window.location.href='practise6.html'">practice 6</button>
-        <button onclick="window.location.href='practise7.html'">practice 7</button>
-        <button onclick="window.location.href='practise8.html'">practice 8</button>
-    </div><br><br>
-    <div class="buttons">
-        <button onclick="window.location.href='practise9.html'">practice 9</button>
-        <button onclick="window.location.href='practise10.html'">practice 10</button>
-        <button onclick="window.location.href='practise11.html'">practice 11</button>
-        <button onclick="window.location.href='practise12.html'">practice 12</button>
-    </div>
-    <br><br>
-     <div class="buttons">
-        <button onclick="window.location.href='practise13.html'">practice 13</button>
-        <button onclick="window.location.href='practise14.html'">practice 14</button>
-        <button /*onclick="window.location.href='practise11.html'"*/>practice 15</button>
-        <button /*onclick="window.location.href='practise12.html'"*/>practice 16</button>
-    </div>
+  </p>
+
+  <div class="buttons">
+    <button onclick="window.open('practise1.html')">Practice 1</button>
+    <button onclick="window.open('practise2.html')">Practice 2</button>
+    <button onclick="window.open('practise3.html')">Practice 3</button>
+    <button onclick="window.location.href='practise4.html'">Practice 4</button>
+  </div>
+
+  <div class="buttons">
+    <button onclick="window.location.href='practise5.html'">Practice 5</button>
+    <button onclick="window.location.href='practise6.html'">Practice 6</button>
+    <button onclick="window.location.href='practise7.html'">Practice 7</button>
+    <button onclick="window.location.href='practise8.html'">Practice 8</button>
+  </div>
+
+  <div class="buttons">
+    <button onclick="window.location.href='practise9.html'">Practice 9</button>
+    <button onclick="window.location.href='practise10.html'">Practice 10</button>
+    <button onclick="window.location.href='practise11.html'">Practice 11</button>
+    <button onclick="window.location.href='practise12.html'">Practice 12</button>
+  </div>
+
+  <div class="buttons">
+    <button onclick="window.location.href='practise13.html'">Practice 13</button>
+    <button onclick="window.location.href='practise14.html'">Practice 14</button>
+    <button disabled title="Coming Soon">Practice 15</button>
+    <button disabled title="Coming Soon">Practice 16</button>
+  </div>
 </body>
 </html>
